@@ -1,0 +1,446 @@
+body {
+    background-image: url('https://i.pinimg.com/originals/dd/94/d3/dd94d32a8908d0e9ad62e7d0ea61609c.gif') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+}
+
+html {
+    background-color: transparent !important;
+}
+
+/* Main content wrapper adjustments for "frosted glass" look */
+.main-container,
+.quiz-container,
+.awd-default-internal-layout-container,
+#assignment-content,
+.assignment-player,
+.main-container__content,
+.probe-panel__wrapper,
+.main__probe-panel-and-drawer-container,
+awd-question-button-bar,
+.correct-answer-container,
+.your-answer-container, /* Generic container for "Your Answer" if exists */
+.feedback-panel,
+.question-component-container,
+.question-layout__answer-area /* Common area holding answer/feedback */
+ {
+    background-color: rgba(40, 42, 54, 0.78) !important; /* Dracula-like base, increased transparency */
+    padding: 25px !important;
+    border-radius: 12px !important;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+/* If some of the above are nested, prevent double-darkening */
+.main-container__content .main-container,
+.probe-panel__wrapper .main-container,
+.main__probe-panel-and-drawer-container .probe-panel__wrapper,
+.main__probe-panel-and-drawer-container .main-container__content,
+.feedback-panel .correct-answer-container,
+.feedback-panel .your-answer-container,
+.question-layout__answer-area .correct-answer-container, /* More specific nesting */
+.question-layout__answer-area .your-answer-container {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Ensure text within these containers has good contrast */
+.main-container p, .main-container div, .main-container span, .main-container label, .main-container h1, .main-container h2, .main-container h3, .main-container legend,
+.quiz-container p, .quiz-container div, .quiz-container span, .quiz-container label, .quiz-container h1, .quiz-container h2, .quiz-container h3, .quiz-container legend,
+.assignment-player p, .assignment-player div, .assignment-player span, .assignment-player label, .assignment-player h1, .assignment-player h2, .assignment-player h3, .assignment-player legend,
+.main-container__content p, .main-container__content div, .main-container__content span, .main-container__content label, .main-container__content h1, .main-container__content h2, .main-container__content h3, .main-container__content legend,
+.probe-panel__wrapper p, .probe-panel__wrapper div, .probe-panel__wrapper span, .probe-panel__wrapper label, .probe-panel__wrapper h1, .probe-panel__wrapper h2, .probe-panel__wrapper h3, .probe-panel__wrapper legend,
+awd-question-button-bar p, awd-question-button-bar div, awd-question-button-bar span, awd-question-button-bar label,
+.correct-answer-container p, .correct-answer-container div, .correct-answer-container span, .correct-answer-container label, .correct-answer-container h1, .correct-answer-container h2, .correct-answer-container h3,
+.your-answer-container p, .your-answer-container div, .your-answer-container span, .your-answer-container label, .your-answer-container h1, .your-answer-container h2, .your-answer-container h3,
+.feedback-panel p, .feedback-panel div, .feedback-panel span, .feedback-panel label, .feedback-panel h1, .feedback-panel h2, .feedback-panel h3,
+.navigation-footer__wrapper p, .navigation-footer__wrapper div, .navigation-footer__wrapper span, .navigation-footer__wrapper label,
+.question-component-container p, .question-component-container div, .question-component-container span, .question-component-container label, .question-component-container h1, .question-component-container h2, .question-component-container h3,
+.question-layout__answer-area p, .question-layout__answer-area div, .question-layout__answer-area span, .question-layout__answer-area label, .question-layout__answer-area h1, .question-layout__answer-area h2, .question-layout__answer-area h3
+ {
+    color: #f8f8f2 !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.25) !important;
+}
+
+/* Specific headings */
+.main-container__content .probe-header,
+.probe-panel__wrapper .probe-header,
+.correct-answer-container .heading, /* Heading for "Correct Answer" */
+.your-answer-container .heading, /* Heading for "Your Answer" */
+.feedback-panel .heading,
+.question-layout__answer-area .heading { /* Generic heading in answer area */
+    color: #f8f8f2 !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid rgba(248,248,242,0.1) !important;
+}
+
+/* Styling for "Your Answer" and "Correct Answer" content specifically */
+/* Make the component holding the answer transparent */
+.fitb-component.-answer, /* For Correct Answer section */
+.your-answer-container .fitb-component, /* For Your Answer section, if it uses this class */
+.dlc_question, /* Often wraps the question and user's input in "Your Answer" */
+.prompt, /* Often wraps the question and user's input in "Your Answer" */
+.view-container[data-automation-id="scoresheet-container"] /* The direct parent of fitb-component */
+ {
+    background-color: transparent !important;
+    padding: 5px 0 !important;
+}
+
+ .correct-answer-container .blank-label,
+ .correct-answer-container .correct-answer,
+ .correct-answer-container .separator,
+ .fitb-component.-answer .blank-label,
+ .fitb-component.-answer .correct-answer,
+ .fitb-component.-answer .separator,
+ .your-answer-container .fitb-component .blank-label,
+ .your-answer-container .fitb-component .user-answer,
+ .your-answer-container .fitb-component .correct-answer,
+ .prompt .blank-label,
+ .prompt .user-answer,
+ span.fitb-span, /* User's answer shown after submission */
+ span.fitb-span span.fitb-answer /* The actual text part of user's answer */
+  {
+    color: #f8f8f2 !important;
+    background-color: rgba(248,248,242,0.1) !important; /* Subtle light highlight */
+    padding: 3px 6px !important;
+    border-radius: 4px !important;
+    margin-right: 5px !important;
+    display: inline-block !important; /* Ensure padding and bg apply correctly */
+}
+/* Ensure direct text within these components is also light */
+.fitb-component.-answer,
+.your-answer-container .fitb-component,
+.prompt,
+.view-container[data-automation-id="scoresheet-container"]
+{
+    color: #f8f8f2 !important;
+}
+.fitb-component.-answer ul, .fitb-component.-answer li,
+.your-answer-container .fitb-component ul, .your-answer-container .fitb-component li {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #f8f8f2 !important;
+}
+
+
+.probe-header, h2.probe-header {
+    color: #f8f8f2 !important;
+    font-weight: bold !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 18px !important;
+    border-bottom: 1px solid rgba(248,248,242,0.15) !important;
+}
+
+.prompt p strong, .dlc_question p strong {
+    color: #f8f8f2 !important;
+    font-weight: 600 !important;
+}
+
+/* == Matching Question & Draggable Item Styling Starts == */
+.match-prompt-label {
+    background-color: rgba(68, 71, 90, 0.8) !important;
+    border: 1px solid rgba(248, 248, 242, 0.15) !important;
+    border-radius: 6px !important;
+    padding: 12px 15px !important;
+    margin-bottom: 10px !important;
+}
+.match-prompt-label .content {
+     background-color: transparent !important;
+}
+.match-prompt-label .content p {
+    color: #f8f8f2 !important;
+    font-weight: 500 !important;
+    font-size: 1.1em !important;
+    margin: 0 !important;
+}
+
+.choice-item-wrapper {
+    background-color: rgba(68, 71, 90, 0.85) !important;
+    border: 1px solid rgba(248, 248, 242, 0.15) !important;
+    border-radius: 6px !important;
+    padding: 0 !important;
+    margin-bottom: 12px !important;
+}
+.choice-item-wrapper:hover {
+    background-color: rgba(80, 83, 102, 0.9) !important;
+    border-color: rgba(248, 248, 242, 0.25) !important;
+}
+.choice-item-wrapper > .choice-item {
+    background-color: transparent !important;
+}
+.choice-item-wrapper .content {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 15px !important;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.choice-item-wrapper .content p {
+    color: #f8f8f2 !important;
+    font-size: 1.08em !important;
+    margin: 0 !important;
+    width: 100%;
+}
+
+.choice-row, .printable-option {
+    background-color: rgba(68, 71, 90, 0.8) !important;
+    border: 1px solid rgba(248, 248, 242, 0.1) !important;
+    margin-bottom: 12px !important;
+    border-radius: 6px !important;
+    padding: 15px !important;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+.choice-row:hover, .printable-option:hover {
+    background-color: rgba(80, 83, 102, 0.9) !important;
+    border-color: rgba(248, 248, 242, 0.2) !important;
+}
+.choiceText p {
+    color: #f8f8f2 !important;
+    font-size: 1.08em !important;
+    margin: 0 !important;
+}
+
+.match-row .dropHolder, .match-row .dropWrapper {
+    background-color: transparent !important;
+}
+.choices-container.droppableContainer .dropHolder {
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.choices-container.droppableContainer .dropHolder > .choice-item-wrapper {
+     margin-bottom: 0px !important;
+}
+
+
+.dropHolder .-placeholder .choice-item {
+    background-color: rgba(50, 52, 64, 0.75) !important;
+    border: 1px dashed rgba(248, 248, 242, 0.25) !important;
+    border-radius: 6px !important;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ .dropHolder .-placeholder .choice-item .content:before {
+    content: "Drop here";
+    color: rgba(248,248,242,0.4);
+    font-style: italic;
+    font-size: 0.95em;
+}
+.dropHolder .-placeholder .choice-item .content {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 10px !important;
+}
+
+.choices-container.droppableContainer {
+    background-color: rgba(30, 32, 42, 0.78) !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    margin-bottom: 25px !important;
+}
+.match-row {
+    background-color: rgba(50, 52, 64, 0.8) !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    margin-bottom: 18px !important;
+    border: 1px solid rgba(248,248,242,0.1);
+}
+.match-row .connector .match-arrow .arrow-horizontal {
+    border-bottom-color: rgba(248,248,242,0.3) !important;
+}
+ .match-row .connector .match-arrow::after {
+    border-left-color: rgba(248,248,242,0.3) !important;
+}
+/* == Matching Question & Draggable Item Styling Ends == */
+
+label.ahe-ui-radio .choice-container, label.ahe-ui-checkbox .choice-container {
+     color: #f8f8f2 !important;
+}
+label.ahe-ui-radio input[type="radio"] + .choice-container::before,
+label.ahe-ui-checkbox input[type="checkbox"] + .choice-container::before {
+    border-color: #bd93f9 !important;
+    background-color: rgba(248,248,242,0.1) !important;
+}
+label.ahe-ui-radio input[type="radio"]:checked + .choice-container::before,
+label.ahe-ui-checkbox input[type="checkbox"]:checked + .choice-container::before {
+    background-color: #bd93f9 !important;
+    border-color: #9a79d0 !important;
+}
+label.ahe-ui-radio input[type="radio"]:checked + .choice-container::after {
+    background: #f8f8f2 !important;
+}
+label.ahe-ui-checkbox input[type="checkbox"]:checked + .choice-container::after {
+    border-color: #f8f8f2 !important;
+}
+
+/* Confidence Buttons Area */
+.confidence-buttons-container, .confidence-buttons-wrapper {
+    background-color: transparent !important;
+}
+.confidence-profile-legend {
+    color: #f8f8f2 !important;
+    text-align: center;
+    margin-bottom: 10px !important;
+    font-size: 0.95em !important;
+}
+.confidence-buttons-container .btn-confidence {
+    background-color: rgba(68, 71, 90, 0.8) !important;
+    color: #f8f8f2 !important;
+    border: 1px solid rgba(248,248,242,0.15) !important;
+    margin: 0 5px !important;
+}
+.confidence-buttons-container .btn-confidence:hover {
+    background-color: rgba(80, 83, 102, 0.9) !important;
+    border-color: rgba(248,248,242,0.25) !important;
+}
+.confidence-buttons-container .btn-confidence:disabled {
+    background-color: rgba(50, 52, 64, 0.6) !important;
+    color: #999 !important;
+    border-color: rgba(248,248,242,0.1) !important;
+}
+[data-automation-id="confidence-buttons--high_confidence"].active,
+[data-automation-id="confidence-buttons--high_confidence"]:focus,
+.confidence-buttons-container button.active {
+    background-color: #50fa7b !important;
+    color: #282a36 !important;
+    border-color: #3ddc67 !important;
+}
+[data-automation-id="confidence-buttons--medium_confidence"].active,
+[data-automation-id="confidence-buttons--medium_confidence"]:focus {
+    background-color: #f1fa8c !important; color: #282a36 !important; border-color: #cbd676 !important;
+}
+[data-automation-id="confidence-buttons--low_confidence"].active,
+[data-automation-id="confidence-buttons--low_confidence"]:focus {
+    background-color: #ff5555 !important; color: #f8f8f2 !important; border-color: #d94444 !important;
+}
+
+/* General Button Styling (Next, Continue etc.) */
+.btn.btn-primary, .btn-primary, .next-button, button[data-automation-id="continue_button"] {
+    background-color: #bd93f9 !important;
+    border-color: #9a79d0 !important;
+    color: #f8f8f2 !important;
+    font-weight: 500 !important; text-shadow: none !important;
+}
+.btn.btn-primary:hover, .btn-primary:hover, .next-button:hover, button[data-automation-id="continue_button"]:hover {
+    background-color: #9a79d0 !important;
+    border-color: #7c60a9 !important;
+}
+.btn.btn-secondary {
+    background-color: #6272a4 !important;
+    border-color: #4c5980 !important;
+    color: #f8f8f2 !important;
+    text-shadow: none !important;
+}
+ .btn.btn-secondary:hover {
+    background-color: #4c5980 !important;
+    border-color: #394362 !important;
+}
+
+.rainbow-text-reminder {
+  background-image: linear-gradient(to left, #ff79c6, #bd93f9, #8be9fd, #50fa7b, #f1fa8c, #ffb86c, #ff5555);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-weight: bold; font-size: 15px; text-align: center; margin-top: 10px; margin-bottom: 18px;
+  padding: 10px; border: 1px solid rgba(248,248,242,0.1); border-radius: 6px;
+  background-color: rgba(30, 32, 42, 0.7);
+}
+
+#ai-response-display-box {
+    background-color: rgba(25, 26, 36, 0.97) !important;
+    color: #f8f8f2 !important;
+    border: 1px solid rgba(248,248,242,0.15) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+}
+
+/* Pause/Resume Button Overlay */
+#pause-script-button-overlay {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 100000 !important;
+    display: flex;
+    gap: 10px;
+}
+#pause-script-button, #reprocess-question-button {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    color: #f8f8f2 !important;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.4) !important;
+    text-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border-width: 2px !important;
+    cursor: pointer;
+}
+#pause-script-button.script-active {
+    background-color: rgba(255, 184, 108, 0.85) !important;
+    border-color: rgba(255, 150, 60, 0.9) !important;
+}
+#pause-script-button.script-paused {
+    background-color: rgba(80, 250, 123, 0.85) !important;
+    border-color: rgba(40, 220, 90, 0.9) !important;
+}
+#pause-script-button i, #reprocess-question-button i {
+    color: #282a36 !important;
+    font-size: 1.5em !important;
+    margin: 0 !important;
+}
+#reprocess-question-button {
+    background-color: rgba(189, 147, 249, 0.85) !important;
+    border-color: rgba(154, 121, 208, 0.9) !important;
+}
+#reprocess-question-button:hover {
+    background-color: rgba(154, 121, 208, 0.95) !important;
+}
+
+/* Hide Readspeaker button */
+.readspeaker-widget, .readspeaker-icon {
+    display: none !important;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #1e1e26 !important;
+    color: #f8f8f2 !important;
+    padding: 20px !important;
+    border-top: 1px solid rgba(248,248,242,0.1) !important;
+}
+.footer .copyright {
+    color: #f8f8f2 !important;
+}
+.footer .links-list a, .footer .links-list a span {
+    color: #bd93f9 !important;
+}
+.footer .links-list a:hover, .footer .links-list a:hover span {
+    color: #ff79c6 !important;
+}
+
+.fitb-input {
+    background-color: rgba(248, 248, 242, 0.1) !important;
+    color: #f8f8f2 !important;
+    border: 1px solid rgba(248, 248, 242, 0.3) !important;
+    border-radius: 4px !important;
+    padding: 8px 10px !important;
+}
+.fitb-input:focus {
+    background-color: rgba(248, 248, 242, 0.2) !important;
+    border-color: #bd93f9 !important;
+    box-shadow: 0 0 0 0.2rem rgba(189, 147, 249, 0.25) !important;
+}
