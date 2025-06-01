@@ -51,6 +51,13 @@ awd-question-button-bar,
     margin: 0 !important;
 }
 
+.next-button-container, .next-button {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    z-index: 100000 !important;
+}
+
 /* Ensure text within these containers has good contrast */
 .main-container p, .main-container div, .main-container span, .main-container label, .main-container h1, .main-container h2, .main-container h3, .main-container legend,
 .quiz-container p, .quiz-container div, .quiz-container span, .quiz-container label, .quiz-container h1, .quiz-container h2, .quiz-container h3, .quiz-container legend,
